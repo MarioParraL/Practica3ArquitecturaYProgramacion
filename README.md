@@ -1,7 +1,7 @@
 # Practica3ArquitecturaYProgramacion
 En  la ***Práctica 3*** creamos una API para el guardado de discos de múscica con los siguientes endpoints:
 - ***Get:***
-- Obtener la información de todos los discos: /api/discos
+- Obtener la información de ***todos los discos***: /api/discos
 - Obtener un disco por su ***id***: /api/discos/:id
 - Obtener un disco por su ***nombre***: /api/discos/nombre/:name
 - Obtener discos por su ***formato***: /api/discos/formato/:format
