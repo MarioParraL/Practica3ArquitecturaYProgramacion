@@ -6,8 +6,8 @@ export const updateDisco = async (req: Request, res: Response)=> {
     try{
         const _id = req.params.id;
         const { name, author, format, matriz, country, art } = req.body;
-        if(!name || !author || !author || !format || !matriz || !country || ! art){
-            res.status(400).send("All the fields are required");
+        if(!name && !author && !author && !format && !matriz && !country && ! art){
+            res.status(400).send("At leats one field is required");
             return;
         }
 
