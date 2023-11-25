@@ -7,23 +7,25 @@ export const getDiscosByCountry = async (req: Request, res: Response) => {
     try{
         const { country } = req.params;
 
-        const discos = await DiscoModel.findOne({ country }).exec();
+        const discos = await DiscoModel.find({ country }).exec();
         
         if(!discos){
-            res.status(404).send("Disc not found by name");
+            res.status(404).send("Disc not found by county");
             return;
         }
 
-        res.status(200).send({
-            
-                name: discos.name,
-                author: discos.author,
-                format: discos.format,
-                matriz: discos.matriz,
-                country: discos.country,
-                art: discos.art,
-                id: discos._id.toString(),            
-    });
+        const formattedDiscos = discos.map((disco)=>({
+            name: disco.name,
+            author: disco.author,
+            format: disco.format,
+            matriz: disco.matriz,
+            country: disco.country,
+            art: disco.art,
+            id: disco._id.toString(),
+
+        }))
+
+        res.status(200).send(formattedDiscos);
          
 
     }catch(error){

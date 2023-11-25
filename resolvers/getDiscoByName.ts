@@ -6,7 +6,7 @@ export const getDiscosByName = async (req: Request, res: Response) => {
     try{
         const { name } = req.params;
 
-        const discos = await DiscoModel.findOne({ name: name }).exec();
+        const discos = await DiscoModel.findOne({ name }).exec();
         
         if(!discos){
             res.status(404).send("Disc not found by name");

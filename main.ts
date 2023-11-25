@@ -31,9 +31,9 @@ app
 .delete("/api/discos/:id", deleteDisco)
 .get("/api/discos", getDiscos)
 .get("/api/discos/:id", getDisco)
-.get("api/discos/:name", getDiscosByName)
-.get("api/discos/:format", getDiscosByFormat)
-.get("api/discos/:country", getDiscosByCountry)
+.get("/api/discos/nombre/:name", getDiscosByName)
+.get("/api/discos/formato/:format", getDiscosByFormat)
+.get("/api/discos/pais/:country", getDiscosByCountry)
 .put("/api/discos/:id", updateDisco);
 
 app.listen(3000, () => {
